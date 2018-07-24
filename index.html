@@ -69,13 +69,17 @@
                 </div>
             </div>
             <div class="am-panel am-panel-default">
-                <h2 class="am-panel-hd"> 设置初始状态 </h2>
+                <h2 class="am-panel-hd"> Initial State Setting </h2>
                 <div class="am-panel-bd">
                     <ul>
-                        <li> 收集 A Coin 10,000 个，B Coin 50,000 个，C Coin 100,000 个</li>
+                        <!--                         <li> 收集 A Coin 10,000 个，B Coin 50,000 个，C Coin 100,000 个</li>
                         <li> 1 A = 100 元，1 B = 25 元，1 C = 2.5 元</li>
                         <li> 发行 New Token (aka. NT) 100,000 个，保证金率：25%</li>
-                        <li> W(A) = 10%, W(B) = 12.5%, W(C) = 2.5% </li>
+                        <li> W(A) = 10%, W(B) = 12.5%, W(C) = 2.5% </li> -->
+                        <li> Issuing New Token (aka. NT): 100,000, CRR: 25%</li>
+                        <li> Collecting A Coin 10,000, B Coin 50,000, C Coin 100,000 </li>
+                        <li> 1 A = 100 USD, 1 B = 25 USD, 1 C = 2.5 USD</li>
+                        <li> CRR(A) = 10%, CRR(B) = 12.5%, CRR(C) = 2.5% </li>
                     </ul>
                     <button onclick="initFunc()" class="am-btn am-btn-default am-radius">RESET</button>
                 </div>
@@ -116,7 +120,6 @@
                 <div class="am-panel-bd">
                     <div>1 NT = <span id="nt-per-a">0</span> A, 1 NT = <span id="nt-per-b">0</span> B, 1 NT = <span id="nt-per-c">0</span> C</div>
                     <br>
-
                     <div>
                         <select name="sel" id="sel" onchange="coinTypeChange()">
                             <option value="A" selected>A</option>
@@ -126,40 +129,33 @@
                         <---> New Token
                     </div>
                     <br>
-
                     <div class="am-g">
                         <div class="am-u-sm-5">
-
                             <div class="am-input-group">
-                              <!-- <span class="am-input-group-label"> BUY </span> -->
-                              <input type="text" class="am-form-field" id = "buy-from-amount" oninput="buyTyping()">
-                              <span class="am-input-group-label" id = "what-coin-1" style="width: 25%"> A </span>
+                                <!-- <span class="am-input-group-label"> BUY </span> -->
+                                <input type="text" class="am-form-field" id="buy-from-amount" oninput="buyTyping()">
+                                <span class="am-input-group-label" id="what-coin-1" style="width: 25%"> A </span>
                             </div>
-
                             <button onclick="buyAmount()" class="am-btn am-btn-success am-radius am-btn-xs am-margin-top am-margin-bottom">Can Exchange</button>
-                            
                             <div class="am-input-group">
-                              <input type="text" class="am-form-field" id = "buy-to-amount" readonly="true">
-                              <span class="am-input-group-label" style="width: 25%">NT</span>
+                                <input type="text" class="am-form-field" id="buy-to-amount" readonly="true">
+                                <span class="am-input-group-label" style="width: 25%">NT</span>
                             </div>
-
                             <div>
                                 <button onclick="buyFunc()" class="am-btn am-btn-success am-radius am-margin-top">BUY</button>
                             </div>
                         </div>
                         <div class="am-u-sm-5 am-u-end">
                             <div class="am-input-group">
-                              <!-- <span class="am-input-group-label"> BUY </span> -->
-                              <input type="text" class="am-form-field" id = "sell-from-amount" oninput="sellTyping()">
-                              <span class="am-input-group-label" style="width: 25%">NT</span>
+                                <!-- <span class="am-input-group-label"> BUY </span> -->
+                                <input type="text" class="am-form-field" id="sell-from-amount" oninput="sellTyping()">
+                                <span class="am-input-group-label" style="width: 25%">NT</span>
                             </div>
                             <button onclick="sellAmount()" class="am-btn am-btn-danger am-radius am-btn-xs am-margin-top am-margin-bottom"> Can Exchange </button>
-
                             <div class="am-input-group">
-                              <input type="text" class="am-form-field" id = "sell-to-amount" readonly="true">
-                              <span class="am-input-group-label" id = "what-coin-2" style="width: 25%">A</span>
+                                <input type="text" class="am-form-field" id="sell-to-amount" readonly="true">
+                                <span class="am-input-group-label" id="what-coin-2" style="width: 25%">A</span>
                             </div>
-
                             <div>
                                 <button onclick="sellFunc()" class="am-btn am-btn-danger am-radius am-margin-top">SELL</button>
                             </div>
